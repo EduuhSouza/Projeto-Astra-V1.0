@@ -102,24 +102,23 @@ function carregarConteudo(pagina) {
 
         case "fluxograma":
             html = `
-                <div class="container-fluxograma">
-                                <h2>Gerador de Tópicos de estudo</h2>
+                 <div class="container-fluxograma">
+                                                <h2>Gerador de Tópicos de estudo</h2>
 
-                                  <div class="input-area">
-                                    <textarea id="tema" placeholder="Digite o tema do fluxograma..."></textarea>
-                                    <button onclick="gerarFluxograma()">Gerar</button>
-                                  </div>
+                                                  <div class="input-area">
+                                                    <textarea id="tema" placeholder="Digite o tema do fluxograma..."></textarea>
+                                                    <button onclick="gerarFluxograma()">Gerar</button>
+                                                  </div>
 
 
-                                  <!-- Tela de carregamento -->
-                                  <div id="loading" style="display:none; margin-top: 10px;">
-                                    Gerando fluxograma, por favor aguarde...
-                                  </div>
+                                                  <!-- Tela de carregamento -->
+                                                  <div id="loading" style="display:none; margin-top: 10px;">
+                                                    Gerando fluxograma, por favor aguarde...
+                                                  </div>
 
-                                <div id="resultado" class="resposta-api"></div>
+                                                <div id="resultado" class="resposta-api"></div>
 
-                                </div>
-<script>
+                                                </div>
 
             `;
             break;

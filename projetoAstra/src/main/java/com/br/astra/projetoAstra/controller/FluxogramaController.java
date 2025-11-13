@@ -36,7 +36,7 @@ public class FluxogramaController {
 
             // Montagem do corpo da requisição para OpenRouter
             Map<String, Object> requestBody = new HashMap<>();
-            requestBody.put("model", "openai/gpt-4o-mini");
+            requestBody.put("model", "openai/gpt-oss-20b:free");
             requestBody.put("messages", new Object[]{
                     Map.of("role", "user", "content", prompt)
             });
