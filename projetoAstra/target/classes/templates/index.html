@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- ICONES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="imgs/icon_logo_astra-removebg-preview.png">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRA</title>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="container">
+    <!-- LINHA DIVISÓRIA -->
+    <div class="shape-line"></div>
+    <div class="shape-line2"></div>
+
+    <!-- CORPO FORMULARIO -->
+    <div class="form-box Login">
+        <h2 class="animation" style="--D:0; --S:21;">Entrar</h2>
+
+        <!-- Mensagem de erro -->
+        <div th:if="${erro != null}" class="alert-erro" role="alert" th:text="${erro}"></div>
+
+        <!-- Formulário de login -->
+        <form th:action="@{/logar}" method="post">
+            <!-- E-mail -->
+            <div class="input-box animation" style="--D:1; --S:22;">
+                <input type="email" required name="email" id="email">
+                <label for="email">Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <!-- Senha -->
+            <div class="input-box animation" style="--D:2; --S:23;">
+                <input type="password" required name="password" id="password">
+                <label for="password">Senha</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <!-- Botão -->
+            <div class="input-box animation" style="--D:3; --S:24;">
+                <button class="btn" type="submit"> Entrar </button>
+            </div>
+
+            <div class="register-link animation" style="--D:4; --S:25;">
+                <p class="SignUpLink">Não tem conta? <a href="#"
+                                                        onclick="mostrarCadastro()"> Criar conta </a></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="info-content Login">
+        <h2 class="animation" style="--D:0; --S:20;">Bem-vindo(a)!</h2>
+        <p class="animation" style="--D:1; --S:21;">Continue sua jornada de aprendizado com a ASTRA.</p>
+    </div>
+
+    <!-- CADASTRO -->
+    <div class="form-box Register">
+        <h2 class="animation" style="--li:17; --S:1;">Cadastrar-se</h2>
+
+        <!-- Formulário de cadastro -->
+        <form th:action="@{/index}" method="post">
+            <div class="input-box animation" style="--li:18; --S:2;">
+                <input type="text" required name="username" id="username">
+                <label for="username">Nome de usuário</label>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="input-box animation" style="--li:18; --S:2;">
+                <input type="email" required name="email" id="emailCadastro">
+                <label for="emailCadastro">Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="input-box animation" style="--li:19; --S:2;">
+                <input type="password" required name="password" id="passwordCadastro">
+                <label for="passwordCadastro">Senha</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <div class="input-box animation" style="--li:20; --S:3;">
+                <button type="submit" class="btn">Cadastrar-se</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="info-content Register">
+        <h2 class="animation" style="--li:17; --S:0;">Bem-vindo(a)</h2>
+        <p class="animation" style="--li:18; --S:1;">Junte-se à ASTRA e descubra o seu melhor jeito de aprender.</p>
+    </div>
+</div>
+
+<script src="/index.js"></script>
+
+</body>
+</html>

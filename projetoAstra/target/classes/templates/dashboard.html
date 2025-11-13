@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- ICONES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="imgs/icon_logo_astra-removebg-preview.png">
+
+    <link rel="stylesheet" href="/dashboard.css">
+    <script type="text/javascript" src="/app.js" defer></script>
+
+    <!-- Importação do jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script> window.chtlConfig = { chatbotId: "6617724214" } </script>
+<script async data-id="6617724214" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard ASTRA</title>
+</head>
+<body>
+
+<!-- CORPO SIDEBAR -->
+<nav id="sidebar">
+    <ul>
+        <li>
+            <img src="imgs/icon_logo_astra-removebg-preview.png" alt="" class="logo">
+            <button onclick="toggleSidebar(this)" id="toggle-btn">
+                <i class="fa-solid fa-angles-left"></i>
+            </button>
+        </li>
+        <li class="active">
+            <button class="nav-btn" data-page="inicio">
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </button>
+        </li>
+        <li>
+            <button class="nav-btn" data-page="dashboard">
+                <i class="fa-solid fa-grip"></i>
+                <span>Dashboard</span>
+            </button>
+        </li>
+        <li>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                <i class="fa-solid fa-folder-plus"></i>
+                <span>Gerar</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+            <ul class="sub-menu">
+                <div>
+                    <li><button class="nav-btn" data-page="fluxograma">Tópicos de estudo</button></li>
+                    <li><button class="nav-btn" data-page="metodo">Método de estudo</button></li>
+                </div>
+            </ul>
+        </li>
+
+        <!-- BOTÃO LOGOUT FIXO -->
+        <div class="logout-section">
+            <form th:action="@{/logout}" method="get">
+                <button type="submit" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sair</span>
+                </button>
+            </form>
+    </ul>
+</nav>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main id="main-content">
+    <div class="container-dashboard">
+        <h2>Bem-vindo à ASTRA</h2>
+        <p>Descubra seu estilo de estudo e explore maneiras personalizadas de aprender.</p>
+    </div>
+</main>
+
+<!-- MERMAID JS -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+
+    mermaid.initialize({ startOnLoad: false });
+</script>
+
+
+<!-- ACESSIBILIDADE -->
+<script src="https://cdn.userway.org/widget.js" data-account="kCDHqw9ltL"></script>
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<!-- LIBRAS -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+
+</body>
+
+</html>

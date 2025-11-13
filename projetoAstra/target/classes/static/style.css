@@ -1,0 +1,330 @@
+@charset "utf-8";
+
+:root{
+    --roxo-escuro: #31175c;
+    --roxo: #73168c;
+    --cinza-escuro: #0d0d0d; 
+    --cinza: #262626;
+}
+
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 20% 20%, #1b0034, #000011 80%);
+      overflow: hidden;
+      color: white;
+    }
+
+.alert-erro {
+    background-color: #f8d7da; /* vermelho claro */
+    color: #721c24;            /* texto vermelho escuro */
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+    /* ----- Fundo animado de estrelas ----- */
+    body::before {
+        z-index: -1;
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: moverEstrelas 100s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes moverEstrelas {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
+    /* Corpo do projeto LOGIN*/
+
+    .container{
+        position: relative;
+        width: 750px;
+        height: 450px;
+        border: 2px solid var(--roxo-escuro);
+        box-shadow: 0 0 25px var(--roxo-escuro);
+        overflow: hidden;
+    }
+
+    .container .form-box{
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .form-box.Login{
+        left: 0;
+        padding: 0 40px;
+        /* backdrop-filter: blur(10px); */
+    }
+
+    /* LOGIN (entrada padrão) */
+    .form-box.Login .animation {
+        transform: translateX(0%);
+        opacity: 1;
+        transition: .7s ease;
+        transition-delay: calc(.1s * var(--S));
+}
+
+    .container.active .form-box.Login .animation {
+        transform: translateX(-120%);
+        opacity: 0;
+        transition-delay: calc(.1s * var(--D));
+}
+
+   
+
+      /* LOGIN */
+
+    .form-box h2{
+        font-size: 32px;
+        text-align: center;
+
+    }
+
+    .form-box .input-box{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin-top: 25px;
+    }
+
+    .input-box input{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        color: white;
+        border-bottom: 2px solid white;
+        padding-right: 23px;
+        transition: .5s ease-in-out;
+    }
+
+     .input-box input:focus,
+    .input-box input:valid{
+        border-bottom: 2px solid var(--roxo);
+    }
+
+    .input-box label{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: white;
+        transition: .5s ease-in-out;
+    }
+
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label{
+        top: -5px;
+        color: var(--roxo);
+    }
+
+    /* ICONS */
+    .input-box i{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-size: 18px;
+        transform: translateY(-50%);
+        transition: .5s ease-in-out;
+    }
+
+     .input-box input:focus ~ i,
+    .input-box input:valid ~ i{
+        color: var(--roxo);
+    }
+
+    /* BOTAO */
+    .btn{
+        position: relative;
+        width: 100%;
+        height: 45px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+        background: transparent;
+        color: white;
+        border: 2px solid var(--roxo);
+        transition: .5s ease-in-out;
+    }
+
+    .btn:hover{
+        box-shadow: 0 0 25px var(--roxo);
+    }
+
+    .register-link{
+        font-size: 1em;
+        text-align: center;
+        margin: 20px 0 10px;
+        
+    }
+
+    .register-link a{
+        text-decoration: none;
+        color: var(--roxo);
+        font-weight: 600;
+        /* pointer-events: none; */
+         cursor: pointer;
+    }
+
+    .register-link a:hover{
+        text-decoration: underline;
+    }
+
+    /* PARTE DE CADASTRO */
+
+    .info-content{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .info-content.Login{
+        right: 0;
+        text-align: center;
+        padding: 0 40px 60px 150px;
+        transition-delay: calc(.1s * var(--S));
+    }
+
+    .info-content.Login .animation{
+        transform: translateX(0%);
+        transition: .7s ease;
+        transition-delay: calc(.1s * var(--D));
+
+    }
+
+    .container.active .info-content.Login .animation{
+        /* transition: .7s; */
+        transform: translateX(120%);
+        opacity: 0;
+    } 
+
+    .info-content h2{
+        text-transform: uppercase;
+        font-size: 2.3em;
+        margin-bottom: 1em;
+        line-height: 1.3;
+    }
+
+    .info-content p{
+        font-size: 1em;
+    }
+
+    /* LINHA DIVISÓRIA */
+    .container .shape-line{
+        position: absolute;
+        right: 0;
+        top: -5px;
+        height: 600px;
+        width: 850px;
+        background: linear-gradient(45deg, var(--cinza-escuro), var(--roxo));
+        /* transform: rotate(10deg) skewY(40deg); */
+        transform: rotate(10deg) skewY(40deg);
+        transform-origin: bottom right;
+        transition: 1.5s ease;
+    }
+
+    .container.active .shape-line{
+        transform: rotate(0deg) skewY(0deg);; 
+    }
+
+    /* CADASTRO FORMAT */
+    .form-box.Register{
+        /* display: none; */
+        right: 0;
+        padding: 0 60px;
+    }
+
+    
+     /* REGISTER (entra quando o container está ativo) */
+    .form-box.Register .animation {
+         transform: translateX(120%);
+        opacity: 0;
+        transition: .7s ease;
+        transition-delay: calc(.1s * var(--S));
+}
+
+    .container.active .form-box.Register .animation {
+        transform: translateX(0%);
+        opacity: 1;
+        transition-delay: calc(.1s * var(--li));
+}
+
+     .info-content.Register{
+        left: 0;
+        text-align: left;
+        padding: 0 150px 60px 35px;
+        /* display: none; */
+        pointer-events: none;
+       
+    }
+
+     .info-content.Register .animation{
+        transform: translateX(-120%);
+        transition: .7s ease;
+        /* opacity: 0; */
+        opacity: 0;
+        filter: blur(10px);
+        transition-delay: calc(.1s * var(--S));
+    }
+
+    .container.active .info-content.Register .animation{
+        /* transition: .7s; */
+        transform: translateX(0%);
+        opacity: 1;
+        filter: blur(0);
+        transition-delay: calc(.1s * var(--li));
+        /* opacity: 0; */
+    } 
+
+    .container .shape-line2{
+        position: absolute;
+        /* right: 0; */
+        left: 250px;
+        top: 100%;
+        height: 700px;
+        width: 850px;
+        background: var(--cinza-escuro);
+        border-top: 3px solid var(--roxo);
+        transform: rotate(0deg) skewY(0deg);
+        transform-origin: bottom left;
+        transition: 1.5s ease;
+    }
+    
+    .container.active .shape-line2{
+        transform: rotate(-11deg) skewY(-41deg);
+        transition-delay: 1s;
+    }
+
+    
