@@ -23,8 +23,7 @@ public class FluxogramaController {
     public ResponseEntity<String> gerarFluxograma(@RequestBody Map<String, String> body) {
         try {
             String tema = body.get("tema");
-            // Novo prompt para pedir tópicos explicados sobre o tema
-            String prompt = "Por favor, gere uma lista detalhada de tópicos explicados (sem ser em markdown) para estudo sobre o seguinte tema: " + tema;
+            String prompt = "Gere um fluxograma em MermaidJS para o seguinte tema: " + tema;
 
             String apiUrl = "https://openrouter.ai/api/v1/chat/completions";
 
@@ -36,7 +35,7 @@ public class FluxogramaController {
 
             // Montagem do corpo da requisição para OpenRouter
             Map<String, Object> requestBody = new HashMap<>();
-            requestBody.put("model", "openai/gpt-oss-20b:free");
+            requestBody.put("model", "openai/gpt-4o-mini");
             requestBody.put("messages", new Object[]{
                     Map.of("role", "user", "content", prompt)
             });
@@ -46,6 +45,8 @@ public class FluxogramaController {
             // Chamada da API OpenRouter
             Map response = restTemplate.postForObject(apiUrl, request, Map.class);
 
+            // Pegar o conteúdo do texto gerado no response (depende da estrutura da API)
+            // Geralmente está em choices[0].message.content
             String conteudo = "";
 
             if (response != null && response.containsKey("choices")) {
@@ -61,7 +62,7 @@ public class FluxogramaController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.badRequest().body("Erro ao gerar tópicos de estudo");
+            return ResponseEntity.badRequest().body("Erro ao gerar fluxograma");
         }
     }
 }

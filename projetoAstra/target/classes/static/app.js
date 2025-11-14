@@ -560,4 +560,3 @@ function gerarPDF(tema, conteudo) {
  iniciarAnimacaoQuiz();
 
 
-

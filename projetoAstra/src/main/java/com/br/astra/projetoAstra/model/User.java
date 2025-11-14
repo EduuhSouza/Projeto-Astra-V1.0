@@ -1,6 +1,9 @@
 package com.br.astra.projetoAstra.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +19,6 @@ public class User {
     private String username;
 
     @NotEmpty
-    @Column(unique = true)
     private String email;
 
     @NotEmpty
