@@ -24,7 +24,7 @@ public class FluxogramaController {
         try {
             String tema = body.get("tema");
             // Novo prompt para pedir tópicos explicados sobre o tema
-            String prompt = "Por favor, gere uma lista detalhada de tópicos explicados para estudo sobre o seguinte tema: " + tema;
+            String prompt = "Por favor, gere uma lista detalhada de tópicos explicados (sem ser em markdown) para estudo sobre o seguinte tema: " + tema;
 
             String apiUrl = "https://openrouter.ai/api/v1/chat/completions";
 

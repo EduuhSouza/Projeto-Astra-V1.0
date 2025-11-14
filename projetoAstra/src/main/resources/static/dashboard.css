@@ -314,13 +314,13 @@ background-color: rgba(176, 108, 255, 0.2);
 /* MAIN  */
 
     .container-dashboard{
-
         border: 1px solid var(--roxo);
         background-color: #1b003481;
         border-radius: 1em;
         margin-bottom: 20px;
         padding: min(3em, 15%);
         margin: 2em;
+
     }
 
 
@@ -347,6 +347,7 @@ background-color: rgba(176, 108, 255, 0.2);
   text-align: center;
   margin: 0 auto;
   transition: all 0.3s ease;
+  margin: 2em;
 }
 
 #sidebar.close + main {
@@ -376,6 +377,7 @@ background-color: rgba(176, 108, 255, 0.2);
 }
 
 .card {
+
     background: rgba(20, 10, 40, 0.85);
     border-radius: 15px;
     padding: 30px 20px;
@@ -409,6 +411,7 @@ background-color: rgba(176, 108, 255, 0.2);
 
 /* ======= FUNCIONALIDADES ======= */
 .features-section {
+    margin-bottom: 2em;
     text-align: center;
 }
 
@@ -557,6 +560,7 @@ background-color: rgba(176, 108, 255, 0.2);
   position: relative;
   overflow: hidden;
 }
+
 
 /*  FORMATAÇÃO QUIZ */
 
@@ -716,6 +720,7 @@ background-color: rgba(176, 108, 255, 0.2);
     text-align: center;
     align-items: center;
     padding: 1em;
+    margin: 2em;
     border-radius: 15px;
 }
 
